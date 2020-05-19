@@ -3,8 +3,13 @@ const path = require('path');
 const dotenv = require('dotenv');
 const color = require('colors');
 const morgan = require('morgan');
+const connectDB = require('./config/db');
 
 dotenv.config({path: './config/config.env'});
+
+connectDB();
+
+const transactions = require('./routes/transactions');
 
 const app = express();
 
@@ -13,6 +18,8 @@ app.use(express.json());
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+
+app.use('/api/transactions', transactions);
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
