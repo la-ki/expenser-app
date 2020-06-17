@@ -1,1 +1,1 @@
-# Track your expenses by giving name of transaction name and amount
+# Track your expenses by giving name of transactio and amount
