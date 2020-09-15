@@ -1,1 +1,1 @@
-# Track your expenses by giving name of transactio and amount
+# Simple webapp that tracks your income or outcome
